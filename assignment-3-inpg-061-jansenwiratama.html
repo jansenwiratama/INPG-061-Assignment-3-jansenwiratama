@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.15/sweetalert2.min.js" integrity="sha512-Z4QYNSc2DFv8LrhMEyarEP3rBkODBZT90RwUC7dYQYF29V4dfkh+8oYZHt0R6T3/KNv32/u0W6icGWUUk9V0jA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.15/sweetalert2.css" integrity="sha512-JzSVRb7c802/njMbV97pjo1wuJAE/6v9CvthGTDxiaZij/TFpPQmQPTcdXyUVucsvLtJBT6YwRb5LhVxX3pQHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        .sm-container {
+            width: 60%;
+            background-color: #ffa401;
+        }
+
+        .btn-color{
+            color: white;
+            background-color: #131e3f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container sm-container border border-success mt-5 pb-5 rounded">
+        <div class="container-fluid text-center">
+            <h3>COVID-19 TRACKER</h3>
+            <form>
+                <div class="my-5">
+                    <div class="row">
+                        <div class="col-10">
+                            <input type="text" class="form-control rounded-pill my-1" name="negara" placeholder="input nama negara" id="input-negara">
+                            <input type="date" class="form-control rounded-pill my-1" name="date" placeholder="input date" id="input-date">
+                        </div>
+                        <div class="col">
+                            <button class="rounded-pill btn-color" id="btn-change">Get Data</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- baris pertama -->
+        <div class="row my-2">
+            <div class="col-4">
+                <div class="card" style="width: 12rem; margin-right: 0!important;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><i class="fa-solid fa-gauge-high"></i></h5>
+                      <h6 class="card-title text-center">Active cases</i></h6>
+            
+                      <p class="card-text" id="activeCases"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 12rem; margin-right: 0!important;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><i class="fa-solid fa-circle-plus"></i></h5>
+                      <h6 class="card-title text-center">New cases</i></h6>
+            
+                      <p class="card-text" id="newCases"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 12rem; margin-right: 0!important;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><i class="fa-solid fa-circle-plus"></i></h5>
+                      <h6 class="card-title text-center">New cases</i></h6>
+            
+                      <p class="card-text" id="newCases"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- baris ke 2 -->
+        <div class="row my-2">
+            <div class="col-4">
+                <div class="card" style="width: 12rem; margin-right: 0!important;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><i class="fa-solid fa-gauge-high"></i></h5>
+                      <h6 class="card-title text-center">Active cases</i></h6>
+            
+                      <p class="card-text" id="activeCases"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 12rem; margin-right: 0!important;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><i class="fa-solid fa-circle-plus"></i></h5>
+                      <h6 class="card-title text-center">New cases</i></h6>
+            
+                      <p class="card-text" id="newCases"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 12rem; margin-right: 0!important;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><i class="fa-solid fa-circle-plus"></i></h5>
+                      <h6 class="card-title text-center">New cases</i></h6>
+            
+                      <p class="card-text" id="newCases"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div id="container">
+        <div class="warna" id="country"></div>
+        <p id="activeCases"></p>
+        <p id="newCases"></p>
+        <p id="recoveredCases"></p>
+        <p id="totalCases"></p>
+        <p id="totalDeaths"></p>
+        <p id="totalTest"></p>
+    </div> -->
+<!-- 
+    <form>
+        <input type="text" name="negara" placeholder="input nama negara" id="input-negara">
+        <input type="date" name="date" placeholder="input date" id="input-date">
+        <button id="btn-change">Get Data</button>
+    </form> -->
+
+    <script>
+                    const options = {
+                        method: 'GET',
+                        headers: {
+                            'X-RapidAPI-Key': '0a154710f5msh90d2d417edd4f41p1ec3dejsnae6fe3942b39',
+                            'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
+                        }
+
+                    };
+                    let buttonChange = document.getElementById('btn-change')
+
+                    buttonChange.addEventListener('click', function (event) {
+                        event.preventDefault()
+                        let inputNegara = document.getElementById('input-negara')
+                        let inputDate = document.getElementById('input-date')
+                        let namaNegara = inputNegara.value
+                        let dateTime = inputDate.value
+
+                        if (namaNegara == null || namaNegara == "") {
+                            Swal.fire('Tolong isi negara!')
+                            // alert("Negara tidak boleh kosong!")
+                        } else if (dateTime == null || dateTime == "") {
+                            Swal.fire('Tolong isi date!')
+                        } else {
+
+                            fetch(`https://covid-193.p.rapidapi.com/history?country=${namaNegara}&day=${dateTime}`, options)
+                                .then(response => response.json())
+                                .then(response => {
+
+                                    if (response.results == 0) {
+                                        Swal.fire("Negara tidak ada!")
+                                    }
+
+                                    var activeCases
+                                    var newCases
+                                    var recoveredCases
+                                    var totalCases
+                                    var totalDeaths
+                                    var totalTest
+
+                                    // document.getElementById('country').innerHTML = response.parameters.country
+
+                                    response.response.forEach(list => {
+                                        if (list.country.toLowerCase() == namaNegara.toLowerCase()) {
+                                            activeCases = list.cases.active
+                                            newCases = list.cases.new
+                                            recoveredCases = list.cases.recovered
+                                            totalCases = list.cases.total
+                                            totalDeaths = list.deaths.total
+                                            totalTest = list.tests.total
+                                            console.log(list);
+                                        }
+                                    });
+
+                                    if (newCases == null) {
+                                        newCases = "tidak ada!"
+                                    }
+
+                                    document.getElementById('activeCases').innerHTML = "activeCases : " + activeCases
+                                    document.getElementById('newCases').innerHTML = "newCases : " + newCases
+                                    document.getElementById('recoveredCases').innerHTML = "recoveredCases : " + recoveredCases
+                                    document.getElementById('totalCases').innerHTML = "totalCases : " + totalCases
+                                    document.getElementById('totalDeaths').innerHTML = "totalDeaths : " + totalDeaths
+                                    document.getElementById('totalTest').innerHTML = "totalTest : " + totalTest
+
+                                    console.log(response)
+                                })
+                                .catch(err => console.error(err));
+                        }
+
+                    })
+    </script>
+
+</body>
+</html>
